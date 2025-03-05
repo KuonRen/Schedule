@@ -136,7 +136,7 @@
             cursor: not-allowed;
         }
 /* スマホ版レスポンシブ */
-@media (max-width: 768px) {
+@media (max-width: 430px) {
     /* .entry内の内容を縦に並べる */
     .entry {
         flex-direction: column; /* 改行して縦に並べる */
@@ -154,9 +154,10 @@
         padding: 5px 10px;
     }
 
-    /* ❌ボタンを横並びに */
-    .delete-btn {
-        margin-left: 10px; /* ❌ボタンに少しスペース */
+    /* ❌ボタンを入力欄の横に配置 */
+    .entry .delete-btn {
+        margin-left: 10px; /* 入力欄との間隔を設定 */
+        align-self: center; /* ❌ボタンを中央揃えに */
     }
 
     .container {
