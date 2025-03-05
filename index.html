@@ -32,6 +32,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
             border: 3px solid #c0c0c0;
+            position: relative; /* for positioning save button */
         }
 
         h1 {
@@ -122,8 +123,9 @@
             border-radius: 8px;
             cursor: pointer;
             margin-top: 20px;
-            display: block;
-            width: 100%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
 
         .save-btn:hover {
@@ -132,9 +134,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="schedule-container">
         <h1>1週間スケジュール</h1>
         <table class="schedule">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
             <script>
                 const days = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
                 const timeOptions = [
@@ -181,6 +184,15 @@
                 function deleteInput(button) {
                     button.closest('.entry').remove();
                 }
+
+                document.querySelector('.save-btn').addEventListener('click', function() {
+                    html2canvas(document.getElementById('schedule-container')).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = 'schedule.jpg';
+                        link.href = canvas.toDataURL('image/jpeg');
+                        link.click();
+                    });
+                });
             </script>
         </table>
         <button class="save-btn">画像として保存</button>
