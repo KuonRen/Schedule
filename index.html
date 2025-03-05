@@ -26,13 +26,15 @@
         .container {
             background: #1a1a1a;
             color: #c0c0c0;
-            width: 210mm;
+            width: 100%;
+            max-width: 210mm;
             min-height: 297mm;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
             border: 3px solid #c0c0c0;
             position: relative;
+            overflow-x: auto; /* 横スクロールを有効にする */
         }
 
         h1 {
@@ -47,12 +49,14 @@
         .schedule {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed; /* テーブルの幅を固定 */
         }
 
         .schedule th, .schedule td {
             border: 2px solid #c0c0c0;
             padding: 15px;
             font-size: 1.2rem;
+            word-wrap: break-word; /* テキストがセル内で折り返されるようにする */
         }
 
         /* 日曜日の文字色と光沢感 */
@@ -91,6 +95,7 @@
             border-radius: 8px;
             background: #1a1a1a;
             color: #c0c0c0;
+            width: 450px; /* 横幅を広げる */
         }
 
         .entry select {
@@ -146,6 +151,34 @@
 
         .save-btn:hover {
             background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .schedule th, .schedule td {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .entry select, .entry input {
+                width: 100%; /* スマホでは入力欄を100%の幅にする */
+            }
+
+            .add-btn, .delete-btn {
+                font-size: 0.9rem;
+            }
+
+            .save-btn {
+                font-size: 1rem;
+            }
+
+            /* スマホでも横スクロールができるように */
+            .container {
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
