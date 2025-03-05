@@ -26,15 +26,13 @@
         .container {
             background: #1a1a1a;
             color: #c0c0c0;
-            width: 210mm;
-            min-height: 297mm;
+            width: 210mm; /* A4サイズに合わせる */
+            height: 297mm; /* A4サイズに合わせる */
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
             border: 3px solid #c0c0c0;
             position: relative;
-            max-width: 100%;
-            overflow: hidden;
         }
 
         h1 {
@@ -135,12 +133,13 @@
         /* スマホ版のレスポンシブ対応 */
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                min-width: 90%;
+                width: 90%;  /* 幅を90%に縮小 */
+                height: auto;  /* 高さは自動で調整 */
+                padding: 10px;
             }
 
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* フォントサイズを少し小さく */
             }
 
             .schedule th, .schedule td {
