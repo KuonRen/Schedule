@@ -135,6 +135,38 @@
             color: #777;
             cursor: not-allowed;
         }
+                /* スマホ版レスポンシブ */
+        @media (max-width: 430px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .schedule th, .schedule td {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .entry input {
+                width: 100%; /* 横幅を100%に変更 */
+            }
+
+            .entry select {
+                width: 100%; /* 横幅を100%に変更 */
+            }
+
+            .container {
+                padding: 15px;
+                max-width: 100%;
+                min-height: auto;
+                box-shadow: none;
+                border-radius: 8px;
+            }
+
+            .add-btn {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
         
     </style>
 </head>
