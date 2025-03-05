@@ -54,27 +54,20 @@
             font-size: 1.2rem;
         }
 
-        .schedule th {
-            background: #1a1a1a;
-            color: #c0c0c0;
-            width: 20%;
-            text-shadow: 0 0 6px rgba(192, 192, 192, 0.8);
-        }
-
         /* 日曜日の文字色と光沢感 */
-        .schedule th:first-child {
+        .sunday {
             color: red; /* 赤色 */
             text-shadow: 0 0 8px rgba(255, 0, 0, 0.8); /* 光沢感 */
         }
 
         /* 土曜日の文字色と光沢感 */
-        .schedule th:last-child {
+        .saturday {
             color: blue; /* 青色 */
             text-shadow: 0 0 8px rgba(0, 0, 255, 0.8); /* 光沢感 */
         }
 
-        /* 平日の文字色（変更なし） */
-        .schedule th:not(:first-child):not(:last-child) {
+        /* 平日の文字色 */
+        .weekday {
             color: #c0c0c0; /* デフォルトの色 */
         }
 
@@ -165,10 +158,20 @@
                     '朝(8:00~)', '朝(9:00~)', '昼(13:00~)', '昼(14:00~)', '夜(18:00~)', '夜(19:00~)', '夜(20:00~)', 'お休み'
                 ];
 
-                days.forEach(day => {
+                days.forEach((day, index) => {
+                    let dayClass = ''; // 曜日の色を格納する変数
+
+                    if (index === 0) {
+                        dayClass = 'sunday'; // 日曜日
+                    } else if (index === 6) {
+                        dayClass = 'saturday'; // 土曜日
+                    } else {
+                        dayClass = 'weekday'; // 平日
+                    }
+
                     document.write(`
                         <tr>
-                            <th>${day}</th>
+                            <th class="${dayClass}">${day}</th>
                             <td>
                                 <div class="input-group" id="${day}">
                                     <div class="entry">
