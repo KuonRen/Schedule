@@ -110,7 +110,7 @@
 
         .delete-btn {
             background: #1a1a1a;
-            color: #c0c0c0;
+            color: #ff0000;
             border: 2px solid #c0c0c0;
             padding: 10px 15px;
             font-size: 1rem;
@@ -135,24 +135,7 @@
             color: #777;
             cursor: not-allowed;
         }
-
-        .save-btn {
-            background: #c0c0c0;
-            color: #1a1a1a;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .save-btn:hover {
-            background: #e0e0e0;
-        }
+        
     </style>
 </head>
 <body>
@@ -206,7 +189,7 @@
                                 ${timeOptions.map(time => `<option>${time}</option>`).join('')}
                             </select>
                             <input type="text" placeholder="予定を入力">
-                            <button class="delete-btn" onclick="deleteInput(this)">✖</button>
+                            <button class="delete-btn" onclick="deleteInput(this)">x</button>
                         `;
                         group.appendChild(newEntry);
                     }
