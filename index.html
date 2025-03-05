@@ -135,39 +135,39 @@
             color: #777;
             cursor: not-allowed;
         }
-                /* スマホ版レスポンシブ */
-        @media (max-width: 430px) {
-            h1 {
-                font-size: 1.8rem;
-            }
+/* スマホ版レスポンシブ */
+@media (max-width: 768px) {
+    /* .entry内の内容を縦に並べる */
+    .entry {
+        flex-direction: column; /* 改行して縦に並べる */
+        align-items: flex-start; /* 左寄せ */
+        gap: 5px; /* 間隔を少し狭く */
+    }
 
-            .schedule th, .schedule td {
-                font-size: 1rem;
-                padding: 10px;
-            }
+    .entry select, .entry input {
+        width: 100%; /* 横幅を100%に変更 */
+    }
 
-            .entry input {
-                width: 100%; /* 横幅を100%に変更 */
-            }
+    .add-btn {
+        width: auto; /* 追加ボタンの幅を狭く設定 */
+        font-size: 0.9rem; /* ボタンの文字を少し小さく */
+        padding: 5px 10px;
+    }
 
-            .entry select {
-                width: 100%; /* 横幅を100%に変更 */
-            }
+    /* ❌ボタンを横並びに */
+    .delete-btn {
+        margin-left: 10px; /* ❌ボタンに少しスペース */
+    }
 
-            .container {
-                padding: 15px;
-                max-width: 100%;
-                min-height: auto;
-                box-shadow: none;
-                border-radius: 8px;
-            }
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        min-height: auto;
+        box-shadow: none;
+        border-radius: 8px;
+    }
+}
 
-            .add-btn {
-                width: 100%;
-                font-size: 1rem;
-            }
-        }
-        
     </style>
 </head>
 <body>
