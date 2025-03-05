@@ -26,10 +26,9 @@
         .container {
             background: #1a1a1a;
             color: #c0c0c0;
-            width: 100%;
-            max-width: 210mm;
+            width: 210mm;
             min-height: 297mm;
-            padding: 20px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
             border: 3px solid #c0c0c0;
@@ -38,7 +37,7 @@
 
         h1 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 3rem;
             color: #0066ff;
             margin-bottom: 20px;
             font-family: 'Great Vibes', cursive; /* 高級感のある筆記体フォント */
@@ -53,7 +52,7 @@
         .schedule th, .schedule td {
             border: 2px solid #c0c0c0;
             padding: 15px;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
         .schedule th {
@@ -136,40 +135,7 @@
             color: #777;
             cursor: not-allowed;
         }
-
-        /* スマホ版レスポンシブ */
-        @media (max-width: 500px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .schedule th, .schedule td {
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            .entry input {
-                width: 100%; /* 横幅を100%に変更 */
-            }
-
-            .entry select {
-                width: 100%; /* 横幅を100%に変更 */
-            }
-
-            .container {
-                padding: 15px;
-                max-width: 100%;
-                min-height: auto;
-                box-shadow: none;
-                border-radius: 8px;
-            }
-
-            .add-btn {
-                width: 100%;
-                font-size: 1rem;
-            }
-        }
-
+        
     </style>
 </head>
 <body>
