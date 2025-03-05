@@ -26,8 +26,8 @@
         .container {
             background: #1a1a1a;
             color: #c0c0c0;
-            width: 210mm; /* A4サイズに合わせる */
-            height: 297mm; /* A4サイズに合わせる */
+            width: 210mm;
+            min-height: 297mm;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
@@ -104,10 +104,10 @@
 
         .delete-btn {
             background: #1a1a1a;
-            color: red; /* ばつマークを赤色に変更 */
-            border: 2px solid red;
+            color: #c0c0c0;
+            border: 2px solid #c0c0c0;
             padding: 10px 15px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
         }
@@ -130,30 +130,22 @@
             cursor: not-allowed;
         }
 
-        /* スマホ版のレスポンシブ対応 */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;  /* 幅を90%に縮小 */
-                height: auto;  /* 高さは自動で調整 */
-                padding: 10px;
-            }
+        .save-btn {
+            background: #c0c0c0;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
 
-            h1 {
-                font-size: 2.5rem; /* フォントサイズを少し小さく */
-            }
-
-            .schedule th, .schedule td {
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            .entry input {
-                width: 250px; /* モバイル向けに入力欄の幅を調整 */
-            }
-
-            .entry select {
-                width: 100%;
-            }
+        .save-btn:hover {
+            background: #e0e0e0;
         }
     </style>
 </head>
