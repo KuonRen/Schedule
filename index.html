@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1週間スケジュール</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); /* 見やすいフォントに変更 */
 
         * {
             margin: 0;
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Roboto', sans-serif; /* タイトルに適用したフォントを全体に使用 */
             background: #1a1a1a;
             display: flex;
             justify-content: center;
@@ -27,7 +27,7 @@
             background: #1a1a1a;
             color: #c0c0c0;
             width: 210mm;
-            min-height: 297mm; /* スケジュール表の高さに合わせて最小高さを設定 */
+            min-height: 297mm;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
@@ -61,6 +61,14 @@
             text-shadow: 0 0 6px rgba(192, 192, 192, 0.8);
         }
 
+        .schedule th:first-child {
+            color: red; /* 日曜日の文字色を赤に */
+        }
+
+        .schedule th:last-child {
+            color: blue; /* 土曜日の文字色を青に */
+        }
+
         .input-group {
             display: flex;
             flex-direction: column;
@@ -88,7 +96,7 @@
         }
 
         .entry input {
-            width: 320px; /* 記入欄の横幅を少しだけ大きくしました */
+            width: 320px;
         }
 
         .delete-btn {
