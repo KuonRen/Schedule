@@ -33,6 +33,8 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
             border: 3px solid #c0c0c0;
             position: relative;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         h1 {
@@ -104,10 +106,10 @@
 
         .delete-btn {
             background: #1a1a1a;
-            color: #c0c0c0;
-            border: 2px solid #c0c0c0;
+            color: red; /* ばつマークを赤色に変更 */
+            border: 2px solid red;
             padding: 10px 15px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             border-radius: 8px;
             cursor: pointer;
         }
@@ -130,22 +132,29 @@
             cursor: not-allowed;
         }
 
-        .save-btn {
-            background: #c0c0c0;
-            color: #1a1a1a;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
+        /* スマホ版のレスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                min-width: 90%;
+            }
 
-        .save-btn:hover {
-            background: #e0e0e0;
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .schedule th, .schedule td {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .entry input {
+                width: 250px; /* モバイル向けに入力欄の幅を調整 */
+            }
+
+            .entry select {
+                width: 100%;
+            }
         }
     </style>
 </head>
