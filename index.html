@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1週間スケジュール</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1a1a1a;
+            color: #c0c0c0;
+            width: 210mm;
+            height: 297mm;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            border: 3px solid #c0c0c0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #c0c0c0;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px rgba(192, 192, 192, 0.8);
+        }
+
+        .schedule {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th, .schedule td {
+            border: 2px solid #c0c0c0;
+            padding: 15px;
+            font-size: 1.2rem;
+        }
+
+        .schedule th {
+            background: #1a1a1a;
+            color: #c0c0c0;
+            width: 20%;
+            text-shadow: 0 0 6px rgba(192, 192, 192, 0.8);
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .entry {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .entry select, .entry input {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #c0c0c0;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #c0c0c0;
+        }
+
+        .entry select {
+            width: 150px;
+        }
+
+        .delete-btn {
+            background: #1a1a1a;
+            color: #c0c0c0;
+            border: 2px solid #c0c0c0;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .add-btn {
+            background: #1a1a1a;
+            color: #c0c0c0;
+            border: 2px solid #c0c0c0;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-btn:disabled {
+            background: #333;
+            border-color: #777;
+            color: #777;
+            cursor: not-allowed;
+        }
+
+        .save-btn {
+            background: #c0c0c0;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        .save-btn:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1週間スケジュール</h1>
+        <table class="schedule">
+            <script>
+                const days = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
+                const timeOptions = [
+                    '朝(8:00~)', '朝(9:00~)', '昼(13:00~)', '昼(14:00~)', '夜(18:00~)', '夜(19:00~)', '夜(20:00~)', 'お休み'
+                ];
+
+                days.forEach(day => {
+                    document.write(`
+                        <tr>
+                            <th>${day}</th>
+                            <td>
+                                <div class="input-group" id="${day}">
+                                    <div class="entry">
+                                        <select>
+                                            ${timeOptions.map(time => `<option>${time}</option>`).join('')}
+                                        </select>
+                                        <input type="text" placeholder="予定を入力">
+                                    </div>
+                                </div>
+                                <button class="add-btn" onclick="addInput('${day}')">＋ 追加</button>
+                            </td>
+                        </tr>
+                    `);
+                });
+
+                function addInput(day) {
+                    const group = document.getElementById(day);
+                    const entries = group.querySelectorAll('.entry');
+
+                    if (entries.length < 3) {
+                        const newEntry = document.createElement('div');
+                        newEntry.className = 'entry';
+                        newEntry.innerHTML = `
+                            <select>
+                                ${timeOptions.map(time => `<option>${time}</option>`).join('')}
+                            </select>
+                            <input type="text" placeholder="予定を入力">
+                            <button class="delete-btn" onclick="deleteInput(this)">✖</button>
+                        `;
+                        group.appendChild(newEntry);
+                    }
+                }
+
+                function deleteInput(button) {
+                    button.closest('.entry').remove();
+                }
+            </script>
+        </table>
+        <button class="save-btn">画像として保存</button>
+    </div>
+</body>
+</html>
