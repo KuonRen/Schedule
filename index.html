@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1週間スケジュール</title>
+    <title>Schedule</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); /* 見やすいフォントに変更 */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /* 高級感のある筆記体フォントを追加 */
 
         * {
             margin: 0;
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif; /* タイトルに適用したフォントを全体に使用 */
+            font-family: 'Roboto', sans-serif;
             background: #1a1a1a;
             display: flex;
             justify-content: center;
@@ -37,9 +37,10 @@
 
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #c0c0c0;
             margin-bottom: 20px;
+            font-family: 'Great Vibes', cursive; /* 高級感のある筆記体フォント */
             text-shadow: 0 0 8px rgba(192, 192, 192, 0.8);
         }
 
@@ -56,19 +57,19 @@
 
         /* 日曜日の文字色と光沢感 */
         .sunday {
-            color: red; /* 赤色 */
-            text-shadow: 0 0 8px rgba(255, 0, 0, 0.8); /* 光沢感 */
+            color: red;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
         }
 
         /* 土曜日の文字色と光沢感 */
         .saturday {
-            color: blue; /* 青色 */
-            text-shadow: 0 0 8px rgba(0, 0, 255, 0.8); /* 光沢感 */
+            color: blue;
+            text-shadow: 0 0 8px rgba(0, 0, 255, 0.8);
         }
 
         /* 平日の文字色 */
         .weekday {
-            color: #c0c0c0; /* デフォルトの色 */
+            color: #c0c0c0;
         }
 
         .input-group {
@@ -150,7 +151,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>1週間スケジュール</h1>
+        <h1>Schedule</h1>
         <table class="schedule">
             <script>
                 const days = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
